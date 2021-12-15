@@ -1042,3 +1042,155 @@ while (!exit) {
    }
 }
 */
+//Создать эпилепсию.Когда включается сайт.Весь его задний фон должен меняться 10 разными цветами каждую 1 секунду.
+//DZ\\
+/*
+const colors = ['red', 'black', 'white', 'green', 'pink', 'blue', 'yellow', 'brown', 'gray', 'orange', 'lime', 'blueviolet', 'cyan', 'coral'];
+function rand() {
+   let random = Math.floor(Math.random() * colors.length);
+   let randColors = document.body.style.background = colors[random];
+}
+let i = 0;
+let int = setInterval(() => {
+   rand()
+   i++;
+   if (i > 25) {
+      clearInterval(int)
+   }
+}, 500);
+*/
+//Создать класс для генерации сложных объектов.див, p, img.Если div + 1 + 1 ввести текст (p) изменить шрифт цвет img ссылки поменять картинку размер картинки
+/*
+class Block {
+   constructor(type) {
+      this.type = type;
+   }
+   setRemove() {
+      let rem = prompt('какой тег хотите удалить?');
+      document.querySelector(rem).remove();
+   }
+   tagCreat() {
+      if (this.type == 'div') {
+         let question = prompt("сколько div вы хотите создать?");
+         for (let i = 0; i < question; i++) {
+            let tagDiv = document.createElement('div');
+            tagDiv.className = prompt('className');
+            document.body.prepend(tagDiv);
+         }
+      } else if (this.type == 'p') {
+         let question_Two = prompt("сколько p вы хотите создать?");
+         for (let i = 0; i < question_Two; i++) {
+            let tagP = document.createElement('p');
+            tagP.textContent = prompt('text');
+            document.body.prepend(tagP);
+         }
+      } else if (this.type == 'img') {
+         let question_Tree = prompt("сколько img вы хотите создать?");
+         for (let i = 0; i < question_Tree; i++) {
+            let tagImg = document.createElement('img');
+            tagImg.src = prompt('src');
+            tagImg.className = prompt('className');
+            tagImg.style = prompt(style);
+            document.body.prepend(tagImg);
+         }
+      }
+   }
+}
+let block = new Block(prompt('div/p/img?'));
+block.tagCreat();
+*/
+//DZ\\
+/*
+let date = new Date;
+date.setHours(12, 00, 06)
+const stopTime = setInterval(() => {
+   const times = document.getElementById("timer").innerHTML = new Date(date -= 1000).toLocaleTimeString();
+   if (times <= '12:00:00') {
+      clearInterval(stopTime)
+      document.querySelector('h1 span').style.display = 'unset'
+   }
+}, 1000);
+*/
+
+//DZ
+/*
+let show = () => {
+   let i = document.querySelector('.info');
+   let scroll_H = i.scrollHeight;
+   let client_H = i.clientHeight;
+   if (client_H < scroll_H) {
+      i.style.height = `${scroll_H}px`;
+      document.querySelector('#text').textContent = 'свернуть';
+   } else if (scroll_H > '300') {
+      i.style.height = `200px`;
+      document.querySelector('#text').textContent = 'розвернуть';
+   }
+}
+*/
+//DZ\\
+/*
+let show = () => {
+   let text = document.querySelector('.text').value;
+   let nameCls = document.querySelector('.class').value;
+   let tagP = document.createElement('p');
+   tagP.className = nameCls;
+   tagP.textContent = text;
+   document.body.append(tagP);
+}
+let showStyle = () => {
+   let cls = document.querySelector('.class-style').value;
+   let stl = document.querySelector(`.${cls}`);
+   let text_Stl = document.querySelector('.text-style').value;
+   let text_Stl_Fs = document.querySelector('.text-style-fs').value;
+   stl.style.color = text_Stl;
+   stl.style.fontSize = `${text_Stl_Fs}px`;
+}
+*///DZ
+/*
+function changestyle() {
+   let act = document.querySelector('.action');
+   if (act.style.visibility == 'visible') {
+      act.style.visibility = 'hidden';
+      setTimeout(changestyle, 700);
+   } else {
+      act.style.visibility = 'visible';
+      setTimeout(changestyle, 1000);
+   }
+}
+setTimeout(changestyle);
+*/
+//Football
+/*
+field.onclick = function (event) {
+
+   // координаты поля относительно окна браузера
+   let fieldCoords = this.getBoundingClientRect();
+
+   // мяч имеет абсолютное позиционирование (position:absolute), поле - относительное (position:relative)
+   // таким образом, координаты мяча рассчитываются относительно внутреннего, верхнего левого угла поля
+   let ballCoords = {
+      top: event.clientY - fieldCoords.top - field.clientTop - ball.clientHeight / 2,
+      left: event.clientX - fieldCoords.left - field.clientLeft - ball.clientWidth / 2
+   };
+
+   // запрещаем пересекать верхнюю границу поля
+   if (ballCoords.top < 0) ballCoords.top = 0;
+
+   // запрещаем пересекать левую границу поля
+   if (ballCoords.left < 0) ballCoords.left = 0;
+
+
+   // // запрещаем пересекать правую границу поля
+   if (ballCoords.left + ball.clientWidth > field.clientWidth) {
+      ballCoords.left = field.clientWidth - ball.clientWidth;
+   }
+
+   // запрещаем пересекать нижнюю границу поля
+   if (ballCoords.top + ball.clientHeight > field.clientHeight) {
+      ballCoords.top = field.clientHeight - ball.clientHeight;
+   }
+
+   ball.style.left = ballCoords.left + 'px';
+   ball.style.top = ballCoords.top + 'px';
+}
+*/
