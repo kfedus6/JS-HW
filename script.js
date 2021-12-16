@@ -1194,3 +1194,240 @@ field.onclick = function (event) {
    ball.style.top = ballCoords.top + 'px';
 }
 */
+//Фото кота
+/*
+function over(elem) {
+   elem.src = 'https://peskit.in.ua/images/Pochemu_koshka_postoyanno_visovivaet_yazik.png';
+}
+function out(elem) {
+   elem.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVrOgFryx_MHqlqif30luBEAAieHqBOd3sfA&usqp=CAU';
+}
+*/
+//нкнопка считает
+/*
+let add = () => {
+   let plus = document.querySelector('#test');
+   plus.value = parseInt(plus.value) + 1;
+}
+*/
+//додати
+/*
+let add = () => {
+   let oneNumber = document.querySelector('#one').value;
+   let twoNumber = document.querySelector('#two').value;
+   let res = document.querySelector('.sum');
+   res.textContent = +oneNumber + +twoNumber;
+}
+*/
+//Калькулятор
+/*
+let calc = document.querySelector('#calc');
+let buttons = calc.querySelectorAll('.button');
+let display = document.querySelector('#display');
+let str = '';
+for (let i = 0; i < buttons.length; i++) {
+   addEvent(buttons[i]);
+}
+function addEvent(button) {
+   button.addEventListener('click', event);
+   function event() {
+      let type = button.getAttribute('data-type');
+      if (type === '=') {
+         str = eval(str);
+         display.value = str;
+         return;
+      } else if (type === 'C') {
+         str = '';
+      } else {
+         str += type;
+      }
+      display.value = str;
+   }
+}
+*/
+//game X O
+/*
+let game = document.querySelector('#game');
+let message = document.querySelector('#message');
+let restart = document.querySelector('#restart');
+let win_x = document.querySelector('#win_x');
+let win_0 = document.querySelector('#win_0');
+let win_draw = document.querySelector('#win_draw');
+let cells = document.querySelectorAll('.cell');
+let player = 'x';
+let paused = false;
+let data = [];
+win = { x: 0, '0': 0, draw: 0 };
+let stepCount = 0;
+let winIndex = [
+   [0, 1, 2],
+   [3, 4, 5],
+   [6, 7, 8],
+   [0, 3, 6],
+   [1, 4, 7],
+   [2, 5, 8],
+   [0, 4, 8],
+   [2, 4, 6]
+];
+for (let i = 0; i < cells.length; i++) {
+   addEvent(cells[i]);
+}
+restart.addEventListener('click', gameRestart);
+function addEvent(cell) {
+   cell.addEventListener('click', step);
+   function step() {
+      if (!cell.innerHTML && !paused) {
+         cell.innerHTML = player;
+         let id = cell.getAttribute('data-id');
+         data[id] = player;
+         stepCount++;
+         if (checkWin()) {
+            message.innerHTML = 'Выиграл: ' + player;
+            win[player]++;
+            stepCount = 0;
+            paused = true;
+         } else {
+            changePlayer();
+         }
+         if (stepCount >= 9) {
+            win.draw++;
+            stepCount = 0;
+            message.innerHTML = 'Ничья';
+         }
+         updateStatistics();
+      }
+   }
+}
+function checkWin() {
+   for (let i = 0; i < winIndex.length; i++) {
+      let id = winIndex[i];
+      let check = data[id[0]] &&
+         data[id[0]] == data[id[1]] &&
+         data[id[1]] == data[id[2]];
+      if (check) {
+         return true;
+      }
+   }
+   return false;
+}
+function changePlayer() {
+   if (player === 'x') {
+      player = '0';
+   } else {
+      player = 'x';
+   }
+   message.innerHTML = 'Ходит: ' + player;
+}
+function clear() {
+   for (let i = 0; i < cells.length; i++) {
+      cells[i].innerHTML = '';
+   }
+}
+function gameRestart() {
+   clear();
+   changePlayer();
+   data = [];
+   paused = false;
+}
+function updateStatistics() {
+   win_x.innerHTML = win.x;
+   win_0.innerHTML = win['0'];
+   win_draw.innerHTML = win.draw;
+}
+*/
+//game number
+/*
+let tableEl = document.querySelector('#game_table');
+let timerEl = document.querySelector('#timer');
+let startEl = document.querySelector('#start');
+let restartEl = document.querySelector('#restart');
+let paused = false;
+let now = 0;
+let timer;
+let rows = 5;
+let columns = 5;
+let time = 75;
+let restTime = time;
+startEl.addEventListener('click', gameStart);
+restartEl.addEventListener('click', gameRestart);
+tableEl.addEventListener('click', init);
+function gameStart() {
+   startEl.style.display = 'none';
+   restartEl.style.display = 'block';
+   create();
+   timerEl.innerHTML = 'Времени осталось: ' + restTime;
+   timer = setInterval(timeStep, 1000);
+}
+function gameRestart() {
+   restTime = time;
+   now = 0;
+   clearInterval(timer);
+   gameStart();
+}
+function timeStep() {
+   restTime--;
+   if (restTime > 0) {
+      timerEl.innerHTML = 'Времени осталось: ' + restTime;
+   } else {
+      clearInterval(timer);
+      timerEl.innerHTML = 'Вы проиграли';
+      paused = true;
+   }
+}
+function init(event) {
+   let targ = event.target;
+   let check = targ.classList.contains('td') &&
+      !targ.classList.contains('select') && !paused;
+   if (check) {
+      let val = +targ.innerHTML;
+      console.log(val, now)
+      if (val === now + 1) {
+         now += 1;
+         targ.classList.add('select');
+         if (val === rows * columns) {
+            timerEl.innerHTML = 'Вы выиграли';
+            clearInterval(timer);
+         }
+      }
+   }
+}
+function create() {
+   startEl.style.display = 'none';
+   let numbers = getNumbers();
+   let html = '';
+   for (let i = 0; i < rows; i++) {
+      html += '<tr>';
+      for (let j = 0; j < columns; j++) {
+         html += '<td class="td" style="'
+            + getRandomStyle() + '">'
+            + getRandomNumber(); + '</td>'
+      }
+      html += '</tr>';
+   }
+   tableEl.innerHTML = html;
+   function getRandomNumber() {
+      let n = randomInterval(0, numbers.length - 1);
+      let res = numbers[n]
+      numbers.splice(n, 1);
+      return res;
+   }
+}
+function getRandomStyle() {
+   return 'font-size:' + randomInterval(14, 40) + 'px;'
+      + 'color:' + getRandomColor();
+}
+function getNumbers() {
+   let numbers = [];
+   for (let i = 0; i < rows * columns; i++) {
+      numbers[i] = i + 1;
+   }
+   return numbers;
+}
+function randomInterval(min, max) {
+   return Math.round(Math.random() * (max - min) + min);
+}
+function getRandomColor() {
+   return 'rgb(' + randomInterval(0, 255) + ',' +
+      randomInterval(0, 255) + ',' + randomInterval(0, 255) + ')';
+}
+*/
