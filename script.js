@@ -1431,3 +1431,27 @@ function getRandomColor() {
       randomInterval(0, 255) + ',' + randomInterval(0, 255) + ')';
 }
 */
+//scroll повильно -- block чатч
+/*
+const up = () => {
+   if (window.pageYOffset > 0) {
+      window.scrollBy(0, -40);
+      setTimeout(up, 0)
+   }
+}
+
+const info = () => {
+   document.querySelector('#info').scrollIntoView(true);
+}
+
+const go = () => {
+   let block = document.querySelector('#block')
+   document.body.style.overflow = 'hidden'
+   block.style.visibility = 'visible';
+}
+const exid = () => {
+   let ex = document.querySelector('#block');
+   ex.style.visibility = 'hidden';
+   document.body.style.overflow = '';
+}
+*/
