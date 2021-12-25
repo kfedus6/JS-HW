@@ -1455,3 +1455,131 @@ const exid = () => {
    document.body.style.overflow = '';
 }
 */
+//GAME X 0
+/*
+let isBlack = true;
+const game = document.querySelector('.game');
+let g = game.children;
+
+const playerX = 'x';
+const player0 = '0';
+
+let win = false;
+let count = 9;
+
+const mess = document.querySelector('.message');
+mess.innerHTML = 'Ходит: ' + playerX;
+
+game.onclick = (event) => {
+
+   const ih = getComputedStyle(event.target).innerHTML;
+   count--;
+
+   if (isBlack && ih != '0') {
+      event.target.innerHTML = 'x';
+      isBlack = false;
+      mess.innerHTML = 'Ходит: ' + player0;
+   }
+   else if (ih != 'x') {
+      event.target.innerHTML = '0';
+      isBlack = true;
+      mess.innerHTML = 'Ходит: ' + playerX;
+   }
+   if (g[0].innerHTML == 'x' && g[1].innerHTML == 'x' && g[2].innerHTML == 'x') {
+      win = true;
+      mess.innerHTML = 'win: x';
+   }
+   else if (g[0].innerHTML == '0' && g[1].innerHTML == '0' && g[2].innerHTML == '0') {
+      win = true;
+      mess.innerHTML = 'win: 0';
+   }
+   else if (g[3].innerHTML == 'x' && g[4].innerHTML == 'x' && g[5].innerHTML == 'x') {
+      win = true;
+      mess.innerHTML = 'win: x';
+   }
+   else if (g[3].innerHTML == '0' && g[4].innerHTML == '0' && g[5].innerHTML == '0') {
+      win = true;
+      mess.innerHTML = 'win: 0';
+   }
+   else if (g[6].innerHTML == 'x' && g[7].innerHTML == 'x' && g[8].innerHTML == 'x') {
+      win = true;
+      mess.innerHTML = 'win: x';
+   }
+   else if (g[6].innerHTML == '0' && g[7].innerHTML == '0' && g[8].innerHTML == '0') {
+      win = true;
+      mess.innerHTML = 'win: 0';
+   }
+   else if (g[0].innerHTML == 'x' && g[4].innerHTML == 'x' && g[8].innerHTML == 'x') {
+      win = true;
+      mess.innerHTML = 'win: x';
+   }
+   else if (g[0].innerHTML == '0' && g[4].innerHTML == '0' && g[8].innerHTML == '0') {
+      win = true;
+      mess.innerHTML = 'win: 0';
+   }
+   else if (g[2].innerHTML == 'x' && g[4].innerHTML == 'x' && g[6].innerHTML == 'x') {
+      win = true;
+      mess.innerHTML = 'win: x';
+   }
+   else if (g[2].innerHTML == '0' && g[4].innerHTML == '0' && g[6].innerHTML == '0') {
+      win = true
+      mess.innerHTML = 'win: 0';
+   }
+   else if (g[0].innerHTML == 'x' && g[3].innerHTML == 'x' && g[6].innerHTML == 'x') {
+      win = true;
+      mess.innerHTML = 'win: x'
+   }
+   else if (g[0].innerHTML == '0' && g[3].innerHTML == '0' && g[6].innerHTML == '0') {
+      win = true;
+      mess.innerHTML = 'win: 0'
+   }
+   else if (g[1].innerHTML == 'x' && g[4].innerHTML == 'x' && g[7].innerHTML == 'x') {
+      win = true;
+      mess.innerHTML = 'win: x'
+   }
+   else if (g[1].innerHTML == '0' && g[4].innerHTML == '0' && g[7].innerHTML == '0') {
+      win = true;
+      mess.innerHTML = 'win: 0'
+   }
+   else if (g[2].innerHTML == 'x' && g[5].innerHTML == 'x' && g[8].innerHTML == 'x') {
+      win = true;
+      mess.innerHTML = 'win: x';
+   }
+   else if (g[2].innerHTML == '0' && g[5].innerHTML == '0' && g[8].innerHTML == '0') {
+      win = true;
+      mess.innerHTML = 'win: 0';
+   }
+   if (win == true) {
+      for (let i = 0; i < g.length; i++) {
+         g[i].innerHTML = '';
+      }
+      win = false;
+   } else if (count == 0) {
+      for (let i = 0; i < g.length; i++) {
+         g[i].innerHTML = '';
+      }
+      count = 0
+   }
+}
+*/
+//delete block
+/*
+const closee = document.querySelectorAll('.close');
+const block = document.querySelectorAll('.block');
+for (let i = 0; i < closee.length; i++) {
+   closee[i].onclick = () => {
+      block[i].remove();
+   }
+}
+*/
+//покрасить таблицу
+/*
+let prevTD;
+document.querySelector('table').onclick = (e) => {
+   if (prevTD != undefined) {
+      prevTD.style.background = 'white';
+   }
+   e.target.style.background = 'red';
+   prevTD = e.target;
+}
+*/
