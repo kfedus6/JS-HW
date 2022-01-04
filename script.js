@@ -1583,3 +1583,188 @@ document.querySelector('table').onclick = (e) => {
    prevTD = e.target;
 }
 */
+//gallery cats
+/*
+let mainImg = document.querySelector('#catImg');
+let galleryCat = document.querySelector('.gallery');
+
+galleryCat.onclick = (e) => {
+   if (e.target.tagName == 'IMG') mainImg.src = e.target.src;
+}
+
+galleryCat.onmouseover = (e) => {
+   if (e.target.tagName == "IMG") {
+      mainImg.src = e.target.src;
+      e.target.style.border = '1px solid red';
+   }
+}
+
+galleryCat.onmouseout = (e) => {
+   if (e.target.tagName == 'IMG') e.target.style.border = '1px solid grey';
+} */
+
+// запрещено
+/*
+document.querySelector('a').onclick = (e) => {
+   let coord = e.target.getBoundingClientRect()
+   let p = document.createElement('p');
+   p.textContent = 'запрещено';
+   p.style.position = 'absolute'
+   p.style.zIndex = 1;
+   p.style.top = coord.y + 'px';
+   p.style.background = 'red';
+   p.style.left = coord.x + 'px';
+   document.body.append(p);
+   setTimeout(() => {
+      p.remove();
+   }, 3000);
+   return false;
+}
+*/
+// перейти на ютуб подкаска
+/*
+document.querySelector('a').onmouseenter = (e) => {
+   let div = document.createElement('div');
+   div.textContent = 'перейти на ютуьб';
+   div.style.background = 'red';
+   div.className = 'text'
+   document.body.append(div);
+   let coords = document.querySelector('a').getBoundingClientRect();
+   div.style.position = 'absolute';
+   div.style.left = coords.x + 'px';
+   div.style.top = coords.y + 'px';
+   console.log(coords)
+}
+document.querySelector('a').onmouseleave = (e) => {
+   console.log(1)
+   let del = document.querySelector('.text');
+   del.remove();
+}
+*/
+//покраситть при нажатии ctrl
+/* let prevP;
+let clearBackground = true;
+document.querySelector('div').onmousedown = (e) => {
+   if (e.ctrlKey == false) {
+      if (clearBackground == false) {
+         console.log(0)
+         for (let i = 0; i < e.path[1].children.length; i++) {
+            e.path[1].children[i].style.background = 'white';
+         }
+      }
+   }
+   if (e.ctrlKey == false) {
+      console.log(1)
+      if (prevP != undefined) {
+         prevP.style.background = 'white';
+         console.log(2)
+      }
+   }
+   if (e.ctrlKey == false) {
+      console.log(3)
+      if (e.target.tagName == 'P') {
+         e.target.style.background = 'red';
+         prevP = e.target;
+         clearBackground = true;
+         console.log(4)
+      }
+   }
+   // if (e.ctrlKey == true) {
+   //    if (clearBackground == true) {
+   //       console.log(5)
+   //       for (let i = 0; i < e.path[1].children.length; i++) {
+   //          e.path[1].children[i].style.background = 'white';
+   //       }
+   //    }
+   // }
+   if (e.ctrlKey == true) {
+      if (e.target.tagName == 'P') {
+         e.target.style.background = 'red';
+         clearBackground = false;
+         console.log(6)
+      }
+   }
+} */
+//Drag'n'Drop с событиями мыши
+/*
+let ball = document.querySelector('.ball')
+let basket = document.querySelector('.basket');
+let sum = document.querySelector('.sum');
+let basketCoords = basket.getBoundingClientRect();
+let ballCoord = ball.getBoundingClientRect();
+ball.onmousedown = (e) => {
+   function moveAt(pageX, pageY) {
+      ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
+      ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
+   };
+   function onMouseMove(e) {
+      moveAt(e.pageX, e.pageY)
+   };
+   ball.style.cursor = 'pointer';
+   ball.style.position = 'absolute';
+   ball.style.zIndex = 1;
+   document.body.append(ball);
+   moveAt(e.pageX, e.pageY);
+   document.addEventListener('mousemove', onMouseMove);
+
+   let result = { number: 0 };
+   ball.onmouseup = (e) => {
+      if (e.pageX > basketCoords.x) {
+         ball.remove();
+         result.number++;
+         sum.textContent = result.number;
+      }
+      else {
+         document.removeEventListener('mousemove', onMouseMove)
+         ball.onmouseup = null;
+      }
+   }
+
+}
+*/
+//ball управление клавой
+/*
+addEventListener('keydown', e => {
+   let ball = document.querySelector('.ball')
+   let cs = getComputedStyle(ball)
+   let left = parseInt(cs.marginLeft)
+   let top = parseInt(cs.marginTop)
+   if (e.key == 'ArrowLeft' && left > 0) {
+      ball.style.marginLeft = left - 10 + 'px';
+   }
+   if (e.key == 'ArrowRight') {
+      ball.style.marginLeft = left + 10 + 'px';
+   }
+   if (e.key == 'ArrowUp') {
+      ball.style.marginTop = top - 10 + 'px';
+   }
+   if (e.key == 'ArrowDown') {
+      ball.style.marginTop = top + 10 + 'px';
+   }
+})
+*/
+// валидация
+/*
+document.querySelector('#text').addEventListener('keydown', e => {
+   if (e.key == "+" || e.key == "(" || e.key == ")" || e.key == "-" || !isNaN(parseInt(e.key)) || e.key == "Backspace" || e.key == "ArrowLeft" || e.key == "ArrowRight") {
+      console.log(e.key)
+   } else {
+      e.preventDefault()
+   }
+})
+*/
+//SCROLL нескичений
+/* 
+window.addEventListener('scroll', (e) => {
+   //console.log(pageYOffset)
+   let bottom = document.documentElement.getBoundingClientRect().bottom;
+   let client_H = document.documentElement.clientHeight;
+   let text = document.querySelector('.text');
+   let copeText = text.textContent;
+   console.log(bottom);
+   console.log(client_H);
+   if (bottom < client_H + 300) {
+      text.textContent = text.textContent + copeText;
+   }
+})
+*/
