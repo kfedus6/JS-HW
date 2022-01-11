@@ -601,7 +601,6 @@
          width: 80px;
          height: 80px;
          border-radius: 100%;
-         background-color: black;
       }
 
       .basket {
@@ -610,6 +609,7 @@
          width: 180px;
          height: 180px;
          background-color: grey;
+         cursor: pointer;
       }
 
       .conteiner {
@@ -620,13 +620,25 @@
          position: fixed;
          right: 250px;
       }
+
+      ul {
+         position: fixed;
+         right: 260px;
+         top: 40px;
+         list-style: none;
+         display: none;
+      }
    </style>
    <div class="conteiner">
-      <div class="ball"></div>
+      <div class="ball" style="background: black;"></div>
+      <div class="ball" style="background: green; top: 100px;"></div>
+      <div class="ball" style="background: red; top: 200px;"></div>
       <div class="sum-basket">
          <p>Корзина: <span class="sum">0</span></p>
       </div>
       <div class="basket"></div>
+      <ul id="list">
+      </ul>
    </div>
    -->
    <!--валидация-->
@@ -670,6 +682,189 @@
       perferendis iste architecto porro consequuntur molestiae tenetur necessitatibus optio culpa ab! Numquam ut, fugit
       obcaecati reiciendis sit labore atque nihil vel quas? Doloremque nostrum ea fuga odio, blanditiis sunt
       exercitationem cumque fugit.
+   </div>
+-->
+   <!--carousel-->
+   <!--
+   <style>
+      body {
+         padding: 10px;
+      }
+
+      .carousel {
+         position: relative;
+         width: 1000px;
+         padding: 10px 40px;
+      }
+
+      #prev {
+         position: absolute;
+         top: 110px;
+         left: -5px;
+         cursor: pointer;
+      }
+
+      #next {
+         position: absolute;
+         top: 110px;
+         left: 920px;
+         cursor: pointer;
+      }
+
+      .gallery {
+         width: 920px;
+         overflow: hidden;
+      }
+
+      .gallery img {
+         width: 300px;
+         height: 300px;
+         display: block;
+      }
+
+      .gallery ul {
+         list-style-type: none;
+         display: flex;
+         height: 300px;
+         margin: 0;
+         padding: 0;
+         transition: margin-left 250ms;
+      }
+   </style>
+   <div class="carousel">
+      <button id="prev"><img src="img/arrow_ left.png"></button>
+      <div class="gallery">
+         <ul>
+            <li><img src="img/chelsea blue.jpg"></li>
+            <li><img src="img/chelsea blue.jpg"></li>
+            <li><img src="img/chelsea blue.jpg"></li>
+            <li><img src="img/chelsea yellow.jpg"></li>
+            <li><img src="img/chelsea yellow.jpg"></li>
+            <li><img src="img/chelsea yellow.jpg"></li>
+            <li><img src="img/chelsea.jpg"></li>
+            <li><img src="img/chelsea.jpg"></li>
+            <li><img src="img/chelsea.jpg"></li>
+         </ul>
+      </div>
+      <button id="next"><img src="img/arrow_ rigth.png"></button>
+   </div>
+   -->
+   <!--загруска фото-->
+   <!--
+   <style>
+      p {
+         width: 150px;
+      }
+
+      img {
+         width: 400px;
+         height: 400px;
+      }
+   </style>
+   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem consequatur nihil est non, vitae eaque sequi.
+      Consequatur et deserunt recusandae praesentium exercitationem nam amet quisquam pariatur? Deleniti nihil debitis
+      neque, laudantium molestiae ad aliquid? Fugit repellat incidunt veritatis iure eveniet? Cum, deleniti enim fugit
+      alias quia impedit recusandae modi fuga reiciendis sint, perspiciatis magni? Earum ut, laboriosam accusamus nihil
+      magni porro architecto iure, molestiae error repudiandae, tempora molestias dolores quae itaque ea deleniti
+      aspernatur saepe illum. Tempore voluptates natus quos rerum libero fugit similique et deleniti at facere quam
+      voluptatem quidem necessitatibus adipisci, perspiciatis aliquam dolorem nihil inventore eos, nam minima quis ex
+      optio. Corporis voluptates nulla commodi consequuntur, nostrum deserunt earum doloribus labore placeat voluptatum
+      eaque non inventore, nam ut expedita sapiente adipisci quo harum nisi laudantium dolorem ab libero quasi! Nostrum
+      sit suscipit a laborum. Iure nobis corrupti possimus quam laboriosam et quis eaque repellendus officia, error
+      perferendis minus ea placeat nulla ducimus praesentium voluptas maiores dolores distinctio accusantium reiciendis.
+      Repudiandae nulla odit iure, cum soluta illum quam esse ab accusantium dolore ratione totam, nemo id ad molestiae
+      alias asperiores nobis reprehenderit blanditiis porro amet nisi cupiditate! Est odio, atque laboriosam asperiores
+      error doloremque minus nam esse accusantium distinctio facilis magnam animi pariatur, sequi eius iste iure earum
+      perferendis necessitatibus? Quo tempora laborum minima dolor ex asperiores enim eligendi iusto nesciunt natus
+      voluptatem laboriosam earum nostrum, qui repudiandae obcaecati corrupti ipsam voluptas. Ab quidem culpa
+      accusantium necessitatibus facere quasi dolorem dolor consectetur perspiciatis, iste nemo mollitia debitis
+      laboriosam quae voluptas doloribus, sapiente exercitationem, voluptatem aliquid libero? Incidunt laborum rerum
+      facilis architecto beatae, quos deleniti corporis autem repellat et velit, exercitationem quisquam iure minima,
+      sapiente at voluptatibus doloremque dolorem a quasi quibusdam! Fuga quos omnis commodi, accusamus adipisci
+      excepturi inventore asperiores delectus quod! Vitae, quas ea eum officiis modi incidunt sunt ipsum ab quod soluta
+      dolores amet beatae laudantium perspiciatis, facere natus magnam repudiandae, non ullam numquam consequatur! Unde
+      placeat illo labore dolor est, impedit nemo voluptatum, ad debitis at, nobis numquam. Quia, illo quis. Tenetur
+      tempore vitae officia quae itaque accusantium fugiat accusamus libero autem numquam omnis cumque, nostrum, totam
+      voluptatem nam sequi animi repellendus. Sit, inventore! Impedit optio dolore dolor tempore vel voluptatibus amet.
+   </p>
+   <img src="loader.svg" src-data="https://proprikol.ru/wp-content/uploads/2020/05/prikolnye-kartinki-na-zastavku-1.jpg"
+      alt="">
+   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia perspiciatis debitis voluptate in velit, aut cum
+      ipsam ducimus recusandae mollitia tenetur id error minus corporis a quisquam quis dolor cupiditate maxime
+      adipisci? Nisi eligendi aliquam natus. Illo delectus ullam voluptate culpa repudiandae. Harum voluptatibus
+      incidunt vitae nesciunt ut accusamus soluta illo magni, alias doloremque facilis quisquam enim iure. Recusandae
+      modi distinctio esse dolorem aliquam cumque neque quam soluta eos magnam fuga voluptates ipsum, exercitationem et!
+      Dolore corrupti placeat deserunt sit cumque dolorum, porro minima ullam ea, error cupiditate ex assumenda,
+      eligendi hic debitis provident et facere perspiciatis delectus! Minima harum velit excepturi officiis quod
+      exercitationem necessitatibus obcaecati voluptate voluptas, nisi voluptatibus sed quaerat vel ea alias quidem
+      laudantium saepe. Cupiditate assumenda, exercitationem repellendus facilis nobis quasi doloribus perspiciatis
+      aliquam, numquam explicabo, voluptate optio? Cumque in maxime aliquam veniam non delectus id at, tenetur
+      distinctio officiis, illo explicabo rem mollitia repellendus qui libero est aut. Dolore consequuntur tempora quam
+      vel deleniti officia beatae saepe incidunt. Accusamus tenetur commodi incidunt dolorum itaque eaque. Sapiente
+      aperiam culpa itaque illum quia rerum quis pariatur, quos repellendus accusantium recusandae, officiis tempore
+      accusamus qui placeat blanditiis beatae earum aliquam nulla omnis. Ex quasi in repudiandae pariatur ipsam
+      reprehenderit inventore fugit nobis tenetur delectus voluptatibus odio asperiores error, dicta eius consequatur
+      nihil iusto, quaerat doloribus rem perspiciatis, corrupti fugiat eum aspernatur. Dolorem, libero dolorum error,
+      quisquam sequi molestiae dicta commodi voluptas molestias ea facere amet expedita ipsum saepe unde? Nulla culpa
+      error molestias repellat sit sequi voluptatum accusantium delectus omnis, eum nobis optio vero quis quisquam
+      aliquid consequatur sed excepturi dolor? Aliquam voluptate, aliquid accusamus minus debitis reprehenderit ratione
+      a, optio eum provident, laboriosam ut ipsum velit. Sequi necessitatibus ea earum ipsam possimus provident
+   </p>
+   <img src="loader.svg" src-data="https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg" alt="">
+   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum non ut hic impedit dolorem vel fuga soluta ullam,
+      libero a eligendi sed, laboriosam iste enim fugiat numquam cum atque, at debitis ipsam facere aperiam quam
+      voluptatibus voluptas. Labore in suscipit voluptatum consectetur earum excepturi ipsum a eius eaque amet unde
+      nobis sed fugiat natus voluptatem maiores deserunt dolorum error sequi quae cumque soluta ullam, dolore
+      repudiandae! Molestias eligendi placeat quam labore omnis exercitationem, tenetur libero modi ex impedit ullam
+      vero, inventore delectus accusamus? Exercitationem dolorem illo aspernatur repudiandae unde minus, quidem ratione
+      enim natus suscipit aliquam quaerat voluptatem, inventore dolores eveniet commodi aliquid ipsam repellat tempore,
+      at rem porro veritatis reiciendis placeat. Consequuntur natus laborum pariatur libero amet corrupti ut tempora
+      modi eius quisquam quas, quos, earum culpa nihil eveniet soluta excepturi delectus. Nihil sapiente delectus quod
+      assumenda provident, accusamus, natus obcaecati nostrum quos inventore numquam atque vel reprehenderit libero
+      commodi corporis, earum sequi quas ex. Tempore eius neque provident quidem aliquam adipisci soluta maxime ex quae,
+      praesentium deserunt. Voluptates voluptas reprehenderit dolore dolores. Velit illo rem eos sunt odio
+      reprehenderit, soluta quasi beatae aut impedit sed? Eum cupiditate voluptates quasi nesciunt! Accusantium quos
+      atque sapiente harum numquam ullam dolorum?</p>
+   <img src="loader.svg" src-data="https://www.imgonline.com.ua/examples/bee-on-daisy.jpg" alt="">
+   -->
+   <!--radio-->
+   <!--
+   <form>
+      1 <input type="radio" name="mark" value="1">
+      2 <input type="radio" name="mark" value="2">
+      3 <input type="radio" name="mark" value="3">
+      4 <input type="radio" name="mark" value="4">
+      5 <input type="radio" name="mark" value="5">
+   </form>
+   -->
+   <!--тема день и нич-->
+   <!-- 
+      <form>
+      <select id="sel">
+         <option value="day">day</option>
+         <option value="night">night</option>
+      </select>
+   </form>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, temporibus totam inventore in rem quod dolorem
+      quia eum harum repudiandae iste esse provident accusamus. Ab sunt nihil aut odit atque eligendi perferendis soluta
+      necessitatibus libero voluptate animi, optio ad aliquid totam explicabo quo illum ea sequi hic eos? Quae aliquam
+      nisi ipsam ducimus sequi, suscipit assumenda, consequatur ad minus nobis architecto quos sit voluptates neque
+      veritatis fugit numquam debitis voluptate sunt placeat dolorum distinctio tempore accusamus recusandae! Provident
+      fugit dolorum animi, eum perferendis quas minima suscipit velit, natus accusamus blanditiis aperiam, incidunt
+      deserunt! Eaque quasi, non aliquam quaerat molestiae doloribus? Commodi ex maxime labore cupiditate. Quisquam
+      corrupti hic minima placeat nihil quaerat expedita eveniet, fugit illo asperiores. Quam eius optio magni, ab
+      voluptate molestiae impedit nostrum pariatur quos earum quis, natus ullam repellendus reprehenderit tempore iusto
+      atque fugiat expedita ipsam vel, iure architecto! Enim beatae itaque illo a. Aperiam voluptates obcaecati debitis
+      nisi aut corporis sint inventore in, rem accusantium commodi exercitationem ex sapiente officiis facilis et,
+      repellat libero cupiditate? Quasi laboriosam dignissimos iure hic pariatur velit, aperiam rem, distinctio nemo ad
+      asperiores ipsam? Itaque recusandae obcaecati at totam? Ab doloribus dignissimos ipsam distinctio eos est quis
+      voluptatibus, odio perspiciatis.</p>
+-->
+   <!--onblur onfocus валидация email password-->
+   <!--
+   <div class="form">
+      <input type="email" placeholder="email" id="email">
+      <input type="password" placeholder="password" id="password">
    </div>
 -->
    <script src=" script.js"></script>

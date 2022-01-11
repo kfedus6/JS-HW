@@ -1687,39 +1687,63 @@ document.querySelector('div').onmousedown = (e) => {
 } */
 //Drag'n'Drop с событиями мыши
 /*
-let ball = document.querySelector('.ball')
 let basket = document.querySelector('.basket');
 let sum = document.querySelector('.sum');
+let ball = document.querySelectorAll('.ball')
 let basketCoords = basket.getBoundingClientRect();
-let ballCoord = ball.getBoundingClientRect();
-ball.onmousedown = (e) => {
-   function moveAt(pageX, pageY) {
-      ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
-      ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
-   };
-   function onMouseMove(e) {
-      moveAt(e.pageX, e.pageY)
-   };
-   ball.style.cursor = 'pointer';
-   ball.style.position = 'absolute';
-   ball.style.zIndex = 1;
-   document.body.append(ball);
-   moveAt(e.pageX, e.pageY);
-   document.addEventListener('mousemove', onMouseMove);
+let listUl = document.querySelector('#list');
+let listLi = document.querySelectorAll('li');
+let result = { number: 0 }
+let checkBasketOpen = false;
 
-   let result = { number: 0 };
-   ball.onmouseup = (e) => {
-      if (e.pageX > basketCoords.x) {
-         ball.remove();
-         result.number++;
-         sum.textContent = result.number;
+basket.onclick = () => {
+   if (checkBasketOpen) {
+      listUl.style.display = "none"
+      checkBasketOpen = false
+   } else {
+      listUl.style.display = 'block';
+      checkBasketOpen = true
+   }
+}
+
+for (let i = 0; i < ball.length; i++) {
+   let ballCoord = ball[i].getBoundingClientRect();
+   ball[i].onmousedown = (e) => {
+
+
+      function moveAt(pageX, pageY) {
+         ball[i].style.left = pageX - ball[i].offsetWidth / 2 + 'px';
+         ball[i].style.top = pageY - ball[i].offsetHeight / 2 + 'px';
       }
-      else {
-         document.removeEventListener('mousemove', onMouseMove)
-         ball.onmouseup = null;
+
+      function onMouseMove(e) {
+         moveAt(e.pageX, e.pageY)
+
+      }
+      ball[i].style.cursor = 'pointer'
+      ball[i].style.position = 'absolute';
+      ball[i].style.zIndex = 1;
+
+      moveAt(e.pageX, e.pageY)
+
+      document.addEventListener('mousemove', onMouseMove);
+
+      ball[i].onmouseup = (e) => {
+         console.log(basketCoords.x, basketCoords.y)
+         console.log(e.pageX, e.pageY)
+         if (e.pageX > basketCoords.x && e.pageY < basketCoords.y + basketCoords.height) {
+            ball[i].remove();
+            result.number++;
+            sum.textContent = result.number;
+            let li = document.createElement('li');
+            li.textContent = ball[i].style.backgroundColor;
+            listUl.append(li);
+         } else {
+            document.removeEventListener('mousemove', onMouseMove)
+            ball[i].onmouseup = null;
+         }
       }
    }
-
 }
 */
 //ball управление клавой
@@ -1754,7 +1778,7 @@ document.querySelector('#text').addEventListener('keydown', e => {
 })
 */
 //SCROLL нескичений
-/* 
+/*
 window.addEventListener('scroll', (e) => {
    //console.log(pageYOffset)
    let bottom = document.documentElement.getBoundingClientRect().bottom;
@@ -1767,4 +1791,101 @@ window.addEventListener('scroll', (e) => {
       text.textContent = text.textContent + copeText;
    }
 })
+*/
+// carousel
+/*
+let width = 300;
+let count = 3;
+let listUl = document.querySelector('ul');
+let listLi = document.querySelectorAll('li');
+let position = 0;
+document.querySelector('#prev').onclick = function () {
+   position += width * count;
+   position = Math.min(position, 0)
+   listUl.style.marginLeft = position + 'px';
+};
+document.querySelector('#next').onclick = function () {
+   position -= width * count;
+   position = Math.max(position, -width * (listLi.length - count));
+   listUl.style.marginLeft = position + 'px';
+}
+*/
+// загруска фото
+/*
+let img = document.querySelectorAll('img');
+window.addEventListener('scroll', (e) => {
+   for (let i = 0; i < img.length; i++) {
+      const coords = img[i].getBoundingClientRect();
+      if (coords.bottom < document.documentElement.clientHeight && img[i].src.split('/')[3] == 'loader.svg') {
+         link_img = img[i].getAttribute('src-data');
+         console.log(img[i].src.split('/')[3])
+         img[i].src = link_img
+         console.log(link_img);
+      }
+   }
+})*/
+//html radio
+/*
+const form = document.forms[0];
+const inputs = form.elements.mark;
+for (let i = 0; i < inputs.length; i++) {
+   inputs[i].onchange = () => {
+      alert(inputs[i].value);
+   }
+}
+*/
+/*
+inputs.forEach(item => {
+   item.onclick = () => {
+      alert(item.value);
+   }
+});
+*/
+// тема день и нич
+/*
+let option = document.querySelector('#sel');
+option.addEventListener('click', () => {
+   if (option.children[1].selected == true) {
+      document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
+   } else {
+      document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
+   }
+})
+*/
+// onblur onfocus валидация email password
+/*
+let email = document.querySelector('#email');
+
+email.onblur = (e) => {
+   let form = document.querySelector('.form');
+   console.log(form)
+   if (!e.target.value.includes('@')) {
+      e.target.style.border = "1px solid red";
+      let div = document.createElement('div');
+      div.textContent = 'некоретний email';
+      div.style.color = 'red';
+      div.className = 'error';
+      form.append(div)
+   }
+}
+email.onfocus = (e) => {
+   e.target.style.border = "";
+   let err = document.querySelector('.error');
+   if (err != null) {
+      err.remove();
+   }
+}
+let password = document.querySelector('#password');
+
+password.onfocus = (e) => {
+   let err = document.querySelector('.error');
+   if (err != null) {
+      email.focus();
+   }
+   if (email.value == '') {
+      email.focus();
+   }
+}
 */
