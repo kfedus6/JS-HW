@@ -4,26 +4,74 @@
    
   <img src="/README/js.png" alt="Logo" width="200px"/>
    
-  <h1 align="center">Home Work.</h1>
+  <h1 align="center">HomeWork.</h1>
   <p style="font-size: 25px;"><strong>JavaScript.</strong></p>
 </div>
 
 ---
 
-<h2 align="start">Website information</h2>
+<h2 align="start">Home Work information</h2>
 
-> **_About Project_** : When I created this website, it was my first experience with React, Redux, TypeScript, Node.js, OSPanel phpMyAdmin MySQL and more.I have used the latest version of React to get acquainted with React Hooks, Lifecycle, Component etc.
-> **_What I used to create this project_** : React, TypeScript, JavaScript, CSS, Bootstrap, Node.js, Redux, Middleware, React Router DOM, i18next, axios, bcryptjs, CORS for React
-<span>You can ask me <strong>"What Can I do here",</strong> let me show you every page and you will understand, what you can do:</span>
+> **_About Project_** : I studied with Mentra, I don't show all the homework here, I decided to show all the most interesting ones.
+> **_What I used to create this project_** : JavaScript
 
 ---
 
-<p style="font-size: 25px;"><strong>- After Authorization </strong></p>
+<p style="font-size: 25px;"><strong>- HOMEWORK:</strong></p>
 
-<ul> 
-  <li><h6><em>We can see that the user cannot write comments and add the product to the cart before authorization, but after authorization, the user icon changes to the cart, and the user can write comments and buy the product.</em></h6></li>
+<ul>
+  <li><h6><em>Here I studied the coordinates</em></h6></li>
+
   <p align="center">
-    <img src="/README/after_OwpsnwR6.gif" alt="after" width="700px" height="400px"/>
+    <img src="/README/Football.gif" alt="Football" width="700px" height="400px"/>
+  </p>
+</ul>
+
+<ul>
+  <li><h6><em>Calculator.</em></h6></li>
+
+  <p align="center">
+    <img src="/README/Calc.gif" alt="calculator" width="700px" height="400px"/>
+  </p>
+</ul>
+
+<ul>
+  <li><h6><em>Carousel.</em></h6></li>
+
+  <p align="center">
+    <img src="/README/carousel.gif" alt="Carousel" width="700px" height="400px"/>
+  </p>
+</ul>
+
+<ul>
+  <li><h6><em>Game X 0.</em></h6></li>
+
+  <p align="center">
+    <img src="/README/x0.gif" alt="x0" width="700px" height="400px"/>
+  </p>
+</ul>
+
+<ul>
+  <li><h6><em>Game.</em></h6></li>
+
+  <p align="center">
+    <img src="/README/game.gif" alt="game" width="700px" height="400px"/>
+  </p>
+</ul>
+
+<ul>
+  <li><h6><em>Infinite scroll</em></h6></li>
+
+  <p align="center">
+    <img src="/README/scroll.gif" alt="scroll" width="700px" height="400px"/>
+  </p>
+</ul>
+
+<ul>
+  <li><h6><em>The picture will load when we scroll to it.</em></h6></li>
+
+  <p align="center">
+    <img src="/README/loaderImf.gif" alt="scroll" width="700px" height="400px"/>
   </p>
 </ul>
 
