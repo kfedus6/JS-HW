@@ -2,7 +2,7 @@
 
 <div align="center">
    
-  <img src="/README/javas.png" alt="Logo" width="200px"/>
+  <img src="/README/js.png" alt="Logo" width="200px"/>
    
   <h1 align="center">Home Work.</h1>
   <p style="font-size: 25px;"><strong>JavaScript.</strong></p>
